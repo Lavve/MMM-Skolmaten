@@ -38,14 +38,29 @@ Module.register('MMM-Skolmaten', {
 
 	// Override dom generator.
 	getDom: function () {
-		var wrapper = document.createElement('div');
+		var wrapper = document.createElement('div'),
+			weekTmp = 0;
 
 		for (var i in this.items) {
-			var item = this.items[i];
+			var item = this.items[i],
+				titleObj = item.title.split(' - '),
+				day = titleObj[0],
+				week = titleObj[1];
 
-			var titleDiv = document.createElement('p');
-			titleDiv.className = 'itemtitle';
-			titleDiv.innerHTML = item.title;
+			if (weekTmp !== week) {
+				weekTmp = week;
+				var weekDiv = document.createElement('div');
+				weekDiv.className = 'weektext';
+				weekDiv.innerHTML = week;
+				var weekLine document.createElement('div');
+				weekLine.className('weekline');
+				weekLine.appendChild(weekDiv);
+				wrapper.appendChild(weekLine);
+			}
+
+			var titleDiv = document.createElement('div');
+			titleDiv.className = 'daytitle';
+			titleDiv.innerHTML = day;
 			wrapper.appendChild(titleDiv);
 
 			var descDiv = document.createElement('div');

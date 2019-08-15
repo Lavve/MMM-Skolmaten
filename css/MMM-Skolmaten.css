@@ -1,12 +1,30 @@
-.itemtitle {
+.weekline {
+	position: relative;
+	height: 2px;
+	background: #555;
+	margin: 12px 0 15px;
+}
+
+.weektitle {
+	font-size: 20px;
+	color: #fff;
+	background: #000;
+	display: inline-block;
+	padding: 5px 10px 5px 0;
+	position: absolute;
+	top: -15px;
+	left: 0;
+}
+
+.daytitle {
 	font-size: 15px;
-	margin-bottom: 0px;
 	margin-top: 7px;
-	line-height: 100%;
+	line-height: 1;
 }
 
 .itemdescription {
 	font-size: 15px;
-	color: #ffffff;
+	color: #fff;
 	line-height: 100%;
+	margin-bottom: 5px;
 }
