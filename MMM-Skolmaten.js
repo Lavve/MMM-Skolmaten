@@ -39,7 +39,7 @@ Module.register('MMM-Skolmaten', {
 	// Override dom generator.
 	getDom: function () {
 		var wrapper = document.createElement('div'),
-			weekTmp = 0;
+			currWeek = 0;
 
 		for (var i in this.items) {
 			var item = this.items[i],
@@ -47,15 +47,15 @@ Module.register('MMM-Skolmaten', {
 				day = titleObj[0],
 				week = titleObj[1];
 
-			if (weekTmp !== week) {
-				weekTmp = week;
-				var weekDiv = document.createElement('div');
-				weekDiv.className = 'weektext';
-				weekDiv.innerHTML = week;
-				var weekLine document.createElement('div');
-				weekLine.className('weekline');
-				weekLine.appendChild(weekDiv);
-				wrapper.appendChild(weekLine);
+			if (currWeek !== week) {
+				var weekText = document.createElement('div');
+				weekText.className = 'weektext';
+				weekText.innerHTML = week;
+				var weekDiv document.createElement('div');
+				weekDiv.className('weekDiv');
+				weekDiv.appendChild(weekText);
+				wrapper.appendChild(weekDiv);
+				currWeek = week;
 			}
 
 			var titleDiv = document.createElement('div');
