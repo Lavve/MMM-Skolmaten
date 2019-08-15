@@ -10,6 +10,7 @@ Module.register('MMM-Skolmaten', {
 	// url is URL of RSS feed, e.g. 'https://skolmaten.se/furuhallskolan/rss/'.
 	defaults: {
 		url: '',
+		updateFrequence: 1, // Update config every hour 
 	},
 
 	getStyles: function() {
@@ -90,6 +91,6 @@ Module.register('MMM-Skolmaten', {
 		var self = this;
 		setInterval(function() {
 			self.sendSocketNotification('LOAD_FEED', { url: self.config.url });
-		}, 60 * 60 * 1000); // In millisecs. Refresh every hour.
+		}, this.config.updateFrequence * 60 * 60 * 1000); // In millisecs. Refresh every 4th hour.
 	}
 });
