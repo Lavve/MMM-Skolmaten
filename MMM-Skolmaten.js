@@ -51,7 +51,7 @@ Module.register('MMM-Skolmaten', {
 				var weekText = document.createElement('div');
 				weekText.className = 'weektext';
 				weekText.innerHTML = week;
-				var weekDiv document.createElement('div');
+				var weekDiv = document.createElement('div');
 				weekDiv.className('weekDiv');
 				weekDiv.appendChild(weekText);
 				wrapper.appendChild(weekDiv);
