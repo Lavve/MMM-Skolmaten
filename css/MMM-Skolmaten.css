@@ -1,3 +1,7 @@
+.skolmat-wrapper {
+	width: 200px;
+}
+
 .weekline {
 	position: relative;
 	height: 2px;
@@ -11,10 +15,10 @@
 	color: #aaa;
 	background: #000;
 	display: inline-block;
-	padding: 0 10px 0 0;
+	padding: 0 0 0 10px;
 	position: absolute;
 	top: -10px;
-	left: 0;
+	right: 0;
 }
 
 .daytitle {

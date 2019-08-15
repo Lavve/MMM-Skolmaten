@@ -41,6 +41,8 @@ Module.register('MMM-Skolmaten', {
 		var wrapper = document.createElement('div'),
 			currWeek = 0;
 
+		wrapper.className = 'skolmat-wrapper';
+
 		for (var i in this.items) {
 			var item = this.items[i],
 				titleObj = item.title.split(' - '),
